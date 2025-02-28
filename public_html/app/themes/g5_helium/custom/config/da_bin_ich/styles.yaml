@@ -1,0 +1,9 @@
+preset: preset1
+navigation:
+  background: '#f1493c'
+  text-color: '#ffffff'
+header:
+  background: '#f1493c'
+  background-image: ''
+  background-overlay: disabled
+  text-color: '#ffffff'

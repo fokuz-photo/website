@@ -1,0 +1,44 @@
+{% extends "partials/page.html.twig" %}
+{% set twigTemplate = 'page.html.twig' %}
+{% set scope = 'page' %}
+
+{% block content %}
+
+    <div class="platform-content">
+        <div class="content-wrapper">
+            <section class="entry">
+                {% if function('is_page','kontakt') %}
+                    <div class="bg-white">
+                        <div class="g-grid jumbotron bg-green">
+                            <div class="g-block">
+                                <div class="g-content heading heading-medium">
+                                    <div class="mb-2">{{ function('the_field', 'title', 'options') }}<br>
+                                    {{ function('the_field', 'address', 'options') }}
+                                    </div>
+
+                                    {% set email = function('get_field', 'email', 'options') %}
+                                    <div class="mb-2"><a href="mailto:{{ email }}">{{ email }}</a></div>
+                                    {% set phone = function('get_field', 'phone_number', 'options') %}
+                                    <div class="mb-2">
+                                        <i class="fa fa-whatsapp fa-fw"></i><a href="https://wa.me/{{ phone|replace({'+': '', ' ': ''}) }}
+">{{ phone }}</a>
+                                    </div>
+
+                                    {% set socials = function('get_field', 'socials', 'options') %}
+                                    <ul>
+                                        {% for social in socials %}
+                                            <li><a href="{{ social['link'] }}" target="_blank"><i class="{{ social['icon_name'] }}"></i>{{ social['label'] }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    {% include ['partials/content-' ~ scope ~ '.html.twig', 'partials/content.html.twig'] %}
+                {% endif %}
+            </section>
+        </div> <!-- /content-wrapper -->
+    </div>
+
+{% endblock %}

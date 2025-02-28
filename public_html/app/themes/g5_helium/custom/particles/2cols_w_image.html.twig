@@ -1,0 +1,24 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+	<div class="bg-white">
+		<div class="g-grid jumbotron bg-red">
+			<div class="g-block size-45">
+				<div class="g-content">
+					{% if particle.image %}<img src="{{ url(particle.image) }}" class="" alt="{{ particle.headline|e }}" width="400" height="410">{% endif %}
+				</div>
+			</div>
+			<div class="g-block size-55">
+				<div class="g-content">
+					{% if particle.linktext %}<a href="{{ particle.link|e }}"><h2 class="heading heading-large heading-large-alt link-heading">{{ particle.linktext|e }}</h2></a>{% endif %}
+					{% if particle.description %}<div class="sample-description">{{ particle.description|nl2br }}</div>{% endif %}
+				</div>
+			</div>
+			<div class="g-block size-100">
+				<div class="g-content">
+					{% if particle.linktext %}<a href="{{ particle.link|e }}" class="link-opaque">{{ 'Mehr sehen'|escape }}</a>{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

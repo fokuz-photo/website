@@ -1,0 +1,27 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+	<div class="">
+		<div class="g-grid">
+			<div class="g-block">
+				<div class="g-content">
+					{% if particle.linktext %}<a href="{{ particle.link|e }}"><h2 class="link-heading">{{ particle.linktext|e }}</h2></a>{% endif %}
+				</div>
+			</div>
+		</div>
+		<div class="g-grid">
+			{% for price in particle.prices %}
+				<div {% if price.id %}id="{{ price.id|e }}"{% endif %}
+					 class="g-block {{ price.class }} {{ price.variations }}">
+					<div class="g-content">
+						{% if price.image %}<img src="{{ url(price.image) }}" class="" alt="{{ price.title|e }}" />{% endif %}
+						<h4>{{ price.title|raw }}</h4>
+						{{ price.description|raw }}
+						<div>ab {{ price.amount|raw }} €</div>
+						<a href="#" class="button">{{ 'Jetzt buchen'|escape }}</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

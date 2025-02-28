@@ -1,0 +1,21 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+	<div class="">
+		{% set post = wordpress.call('Timber::get_post') %}
+		<h1 class="heading heading-large">{{ post.title }}</h1>
+		<div class="g-grid g-flushed">
+			<div class="g-block size-100">
+				<div class="g-content">
+					{% if particle.image %}<img src="{{ url(particle.image) }}" class="hero-temp" alt="{{ particle.headline|e }}" width="800" height="600">{% endif %}
+				</div>
+			</div>
+			<div class="g-block size-100 relative">
+				<div class="g-content hero-content">
+					{% if particle.description %}<div class="hero-description heading heading-small">{{ particle.description|raw }}</div>{% endif %}
+					{% if particle.linktext %}<div class="mt-1"><a href="{{ particle.link|e }}" class="button">{{ particle.linktext|e }}</a></div>{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

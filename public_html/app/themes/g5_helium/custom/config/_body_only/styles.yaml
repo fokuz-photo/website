@@ -1,0 +1,7 @@
+preset: preset1
+navigation:
+  background: '#db3326'
+header:
+  background: '#db3326'
+offcanvas:
+  background: '#71d154'

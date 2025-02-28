@@ -1,0 +1,56 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+
+<div class="g-contentcubes {{ particle.css.class }}">
+
+    {% if particle.items %}
+    {% set item_counter = 1 %}
+        {% for item in particle.items %}
+            <div class="g-grid">
+                <div class="g-block size-50 image-position-{{ item.imageposition }}">
+                    <div class="g-content">
+                        {% if item_counter == 1 %}
+                            {% if particle.title %}<a href="{{ particle.link|e }}"><h2 class="heading heading-large link-heading">{{ particle.title|e }}</h2></a>{% endif %}
+                        {% endif %}
+                        <div class="g-card p-sm-1 p-md-2 mx-auto">
+                            <div class="d-flex flex-col justify-content-between">
+{#                                <div class="g-card-content-wrapper">#}
+                                    {% if item.name %}<h3 class="heading heading-medium">{{ item.name|raw }}</h3>{% endif %}
+                                    {% if item.image %}
+                                        <a href="{{ url(item.image) }}" class="fancybox">
+                                            <img loading="lazy" src="{{ url(item.thumbnail) }}" alt="{{ item.name|e }}" width="400" height="400">
+                                        </a>
+                                    {% endif %}
+{#                                </div>#}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="g-block size-50">
+                    <div class="g-content">
+                        {% if item.desc %}<div class="">{{ item.desc|raw }}</div>{% endif %}
+                        {% set image_counter = 1 %}
+                        {% for image in item.images %}
+                            {% if item_counter % 2 == 1 %}
+                            <div class="d-flex {% if image_counter % 2 == 1 %}justify-content-end{% endif %}">
+                            {% else %}
+                            <div class="d-flex {% if image_counter % 2 == 0 %}justify-content-end{% endif %}">
+                            {% endif %}
+                                <a href="{{ url(image.image) }}" class="fancybox size-45">
+                                    <img loading="lazy" src="{{ url(image.thumbnail) }}" alt="{% if image.alttext %}{{ image.alttext|raw }}{% else %}Clickable image{% endif %}" width="300" height="300">
+                                </a>
+                            </div>
+                            {% set image_counter = image_counter + 1 %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% set item_counter = item_counter + 1 %}
+        {% endfor %}
+
+    {% endif %}
+</div>
+
+{% endblock %}

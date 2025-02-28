@@ -1,0 +1,13 @@
+preset: preset1
+header:
+  background-image: ''
+  background-overlay: disabled
+  text-color: '#eceeef'
+intro:
+  background: '#db3326'
+  text-color: '#ffffff'
+testimonials:
+  background: '#782aac'
+  background-image: ''
+  background-overlay: disabled
+  text-color: '#ffffff'

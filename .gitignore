@@ -28,3 +28,5 @@ web/.htaccess
 wp-cli.local.yml
 
 .idea/
+.htaccess.swo
+.htaccess.swp
