@@ -15,6 +15,7 @@ web/.htaccess
 
 # Logs
 *.log
+public_html/app/wflogs/*
 
 # Dotenv
 .env
