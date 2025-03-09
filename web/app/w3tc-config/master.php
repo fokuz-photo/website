@@ -1,5 +1,5 @@
 <?php exit; ?>{
-    "version": "2.8.0",
+    "version": "2.8.6",
     "cluster.messagebus.debug": false,
     "cluster.messagebus.enabled": false,
     "cluster.messagebus.sns.region": "",
@@ -62,6 +62,7 @@
         "\\bsql_calc_found_rows\\b",
         "\\bfound_rows\\(\\)"
     ],
+    "dbcache.wpcli_disk": false,
     "docroot_fix.enable": false,
     "lazyload.enabled": false,
     "lazyload.threshold": "",
@@ -102,7 +103,7 @@
     "objectcache.enabled_for_wp_admin": false,
     "objectcache.fallback_transients": true,
     "objectcache.engine": "file",
-    "objectcache.file.gc": 3600,
+    "objectcache.file.gc": 600,
     "objectcache.file.locking": false,
     "objectcache.memcached.servers": [
         "127.0.0.1:11211"
@@ -141,6 +142,7 @@
     ],
     "objectcache.lifetime": 180,
     "objectcache.purge.all": false,
+    "objectcache.wpcli_disk": false,
     "pgcache.configuration_overloaded": false,
     "pgcache.enabled": false,
     "pgcache.comment_cookie_ttl": 1800,
