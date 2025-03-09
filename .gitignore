@@ -1,21 +1,22 @@
 # Application
-public_html/app/plugins/*
-!public_html/app/plugins/.gitkeep
-!public_html/app/plugins/fokuz
-public_html/app/mu-plugins/*/
-public_html/app/themes/twentytwentyfour/
-public_html/app/upgrade
-public_html/app/uploads/*
-!public_html/app/uploads/.gitkeep
-public_html/app/cache/*
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+!web/app/plugins/fokuz
+web/app/mu-plugins/*/
+web/app/themes/twentytwentyfour/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+web/app/uploads-webpc
+web/app/cache/*
 
 # WordPress
-public_html/wp
-public_html/.htaccess
+web/wp
+web/.htaccess
 
 # Logs
 *.log
-public_html/app/wflogs/*
+web/app/wflogs/*
 
 # Dotenv
 .env
